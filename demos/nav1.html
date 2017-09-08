@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #menu {
+            height: 50px;
+            width: 400px;
+            overflow: hidden;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        #menu ul li {
+            float: left;
+            margin: 0 5px;
+        }
+
+        #menu ul a {
+            display: block;
+            background: #e70f23;
+            color: #fff;
+            height: 50px;
+            width: 100px;
+            line-height: 50px;
+            -webkit-transition: margin .4s ease-in-out;
+            -moz-transition: margin .4s ease-in-out;
+            -o-transition: margin .4s ease-in-out;
+            -ms-transition: margin .4s ease-in-out;
+            transition: margin .4s ease-in-out;
+        }
+
+        #menu ul a:nth-of-type(even) {
+            background: #000;
+            color: white;
+        }
+
+        #menu ul li:hover:first-child {
+            margin-top: -50px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="demoBox">
+    <div id="menu">
+        <ul>
+            <li><a href="#">Home</a><a href="#">See Us</a></li>
+
+        </ul>
+        <ul>
+            <li><a href="#">About</a><a href="#">Meet Us</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Contact</a><a href="#">Email Us</a></li>
+        </ul>
+
+    </div>
+</div>
+</body>
+
+</html>
