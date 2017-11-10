@@ -1,0 +1,30 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+/*实现瀑布瀑布流布局重点代码*/
+#container{
+    position: absolute;
+    -webkit-column-width: 280px;
+   /* -webkit-column-count: 5;*/
+    -webkit-column-rule: 2px dashed #F00;
+    -webkit-column-gap: 5px;
+}
+
+.box{
+    padding: 15px 0 0 15px;
+    /*float: left;*/
+}
+.pic{
+    padding: 10px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    box-shadow:0 0 5px #ccc ;
+    width: 280px;
+}
+.pic img{
+    display: block;
+    width:280px;
+    height:auto;
+}
