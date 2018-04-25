@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style media="screen">
+        body{
+            background:black;
+            text-align: center;
+        }
+        #c1{
+            background: white;
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+            let od=document.getElementById('c1');
+            let gd=od.getContext('2d');
+
+            //完整版drawImage(oImg，[sx,sy,sw,sh,//s-source(源)]，[dx,dy,dw,dh//d-direction(目标)]);
+
+            let oImg=new Image();
+
+            oImg.src='./images/imgTwo.jpg';
+
+            oImg.onload=function () {
+                let frame=0;
+                let x=100,y=100;
+                let speed=8;
+                let dir='l';
+                document.onkeydown=function(ev){
+                    let keys={37:'l',38:'u',39:'r',40:'d'};
+                    dir=keys[ev.keyCode]||dir;
+
+                };
+
+                setInterval(function () {
+                    gd.clearRect(0,0,od.width,od.height);
+                    let rows={'d':0,'l':1,'r':2,'u':3};
+                    gd.drawImage(
+                        oImg,
+                        100+frame,10*rows[dir],80,  70,
+                        x,        y,           35*2,30*2);
+                    switch (dir){
+                        case 'l':x-=speed;break;
+                        case 'r':x+=speed;break;
+                        case 'u':y-=speed;break;
+                        case 'd':y-=speed;break;
+                    }
+                },30)
+            };
+        };
+
+    </script>
+</head>
+<body>
+
+<canvas id='c1' width="800" height="600"></canvas>
+</body>
+</html>

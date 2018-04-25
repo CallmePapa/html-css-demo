@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style media="screen">
+        body{
+            background:black;
+            text-align: center;
+        }
+        #c1{
+            background: white;
+        }
+    
+    </style>
+    <script>
+      window.onload=function(){
+            let od=document.getElementById('c1');
+            let gd=od.getContext('2d');
+            let l=50;
+            //让其向右移动
+            setInterval(function () {
+
+                gd.clearRect(0,0,od.width,od.height);//清除画布
+                l+=5;
+                gd.strokeRect(l,50,100,70);
+            },16);
+      };
+
+    </script>
+</head>
+<body>
+   <canvas id='c1' width="400" height="300"></canvas>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>图形</title>
+    <style media="screen">
+        body{
+            background:black;
+            text-align: center;
+        }
+        #c1{
+            background: white;
+        }
+
+    </style>
+    <script>
+        //弧度的换算
+        function d2a(n){
+            return n*Math.PI/180;
+        }
+        //角度的换算
+        function a2d(n){
+            return n*180/Math.PI;
+        }
+        window.onload=function(){
+            let od=document.getElementById('c1');
+            let gd=od.getContext('2d');
+
+            gd.strokeRect(100,100,300,200);
+            gd.translate(250,200);
+            gd.rotate(d2a(30));
+
+            gd.fillStyle='rgba(255,0,0,0.3)';
+            gd.fillRect(0,0,od.width,od.height);
+
+            gd.strokeRect(-150,-100,300,200);
+
+        };
+
+    </script>
+</head>
+<body>
+<canvas id='c1' width="500" height="500"></canvas>
+</body>
+</html>

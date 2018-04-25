@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>图形</title>
+    <style media="screen">
+        body{
+            background:black;
+            text-align: center;
+        }
+        #c1{
+            background: white;
+        }
+
+    </style>
+    <script>
+        //弧度的换算
+        function d2a(n){
+            return n*Math.PI/180;
+        }
+        //角度的换算
+        function a2d(n){
+            return n*180/Math.PI;
+        }
+        window.onload=function(){
+            let od=document.getElementById('c1');
+            let gd=od.getContext('2d');
+
+            let roate=0;
+            gd.strokeRect(100,100,300,200);
+
+            setInterval(function () {
+                gd.clearRect(0,0,od.width,od.height);//路径
+
+                roate++;
+                //save--保存当前状态（线宽，旋转角度等等状态，但是不保存图形本身）;
+                gd.save();
+
+                //先旋转再平移。
+                gd.translate(250,200);
+                gd.rotate(d2a(roate));
+                gd.strokeRect(-150,-100,300,200);
+
+                //恢复；
+                gd.restore();
+            },16)
+
+
+
+
+        };
+
+    </script>
+</head>
+<body>
+<canvas id='c1' width="500" height="500"></canvas>
+</body>
+</html>
