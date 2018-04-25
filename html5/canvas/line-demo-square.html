@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>line-demo</title>
+    <style type="text/css">
+        body{
+            background:black;
+            text-align: center;
+        }
+        #c1{
+            background: white;
+        }
+
+    </style>
+    <script type="text/javascript">
+        window.onload=function () {
+            let oC=document.getElementById('c1');
+            let gd=oC.getContext('2d');
+            //gd.lineWidth=10;
+
+            gd.beginPath();
+            gd.moveTo(100,100);
+            gd.lineTo(500,100);
+            gd.strokeStyle='red';
+            gd.stroke();
+
+            gd.beginPath();
+            gd.moveTo(500,100);
+            gd.lineTo(500,300);
+            gd.strokeStyle='yellow';
+            gd.stroke();
+
+            gd.beginPath();
+            gd.moveTo(500,300);
+            gd.lineTo(100,300);
+            gd.strokeStyle='blue';
+            gd.stroke();
+
+            gd.beginPath();
+            gd.moveTo(100,300);
+            gd.lineTo(100,100);
+            gd.strokeStyle='black';
+            gd.stroke();
+
+
+
+        }
+    </script>
+</head>
+<body>
+<canvas id="c1" width="800" height="600">
+    您的浏览器不支持canvas,请下载最新浏览器
+</canvas>
+</body>
+</html>

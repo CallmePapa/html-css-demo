@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>line-demo</title>
+    <style type="text/css">
+        body {
+            background: black;
+            text-align: center;
+        }
+
+        #c1 {
+            background: white;
+        }
+
+    </style>
+    <script type="text/javascript">
+
+
+        window.onload = function () {
+            let oC = document.getElementById('c1');
+            let gd = oC.getContext('2d');
+            let cx = 300, cy = 300, r = 100;
+            let ged = function (n) {
+                return n * Math.PI / 180;
+            };
+
+
+            /* gd.font="20px 宋体";
+             gd.strokeText('weiqiujuan',0,200);
+             gd.fillText('weiqiujuan',0,400);*/
+
+            function pie(start, ending, color) {
+                gd.beginPath();
+                //1
+                let xa = cx + Math.sin(ged(start)) * r;
+                let ya = cy - Math.cos(ged(ending)) * r;
+                gd.moveTo(cx, cy);
+                gd.lineTo(xa, ya);
+                //2
+                gd.arc(cx, cy, r, ged(start - 90), ged(ending - 90), false);
+                //3
+                gd.closePath();
+                gd.fillStyle = color;
+                gd.fill();
+            }
+
+            let data = [600, 500, 130, 201];
+            let color = ['yellow', 'blue', 'red', 'green'];
+
+            let sum = data.reduce((tmp, item, index) =>
+                tmp + item
+            );
+            let angs = data.map(item =>
+                360 * item / sum
+            );
+
+            let last = 0;
+
+
+            angs.forEach((ang,index)=> {
+                pie(last, last + ang, color[index]);
+                last += ang;
+            });
+
+        }
+    </script>
+</head>
+<body>
+<canvas id="c1" width="800" height="600">
+    您的浏览器不支持canvas,请下载最新浏览器
+</canvas>
+</body>
+</html>
