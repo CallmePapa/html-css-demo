@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video</title>
+
+    <style type="text/css">
+        .box {
+            width: 500px;
+            height: 20px;
+            background: #666;
+        }
+
+        .box .child {
+            height: 20px;
+            background: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            let oV = document.getElementById('v1');
+            let start = document.getElementById('start');
+            let pause = document.getElementById('pause');
+            let stop = document.getElementById('stop');
+            let process = document.getElementById('process');
+            let child=document.querySelector('.child');
+            process.onclick = function () {
+                alert(oV.currentTime + oV.duration);
+            };
+            start.onclick = function () {
+                oV.play();
+
+            };
+            pause.onclick = function () {
+                oV.pause();
+            };
+            stop.onclick = function () {
+                oV.pause();
+                oV.currentTime = 0;
+            };
+            oV.addEventListener('timeupdate', function () {
+                child.style.width=parseInt(100*oV.currentTime/oV.duration+'%');
+            }, false);
+
+           /* oV.muted = true;*/
+        }
+    </script>
+</head>
+<body>
+<div>
+    <input type="button" value="start" id="start">
+    <input type="button" value="pause" id="pause">
+    <input type="button" value="stop" id="stop">
+    <input type="button" value="process" id="process">
+</div>
+<div class="box">
+    <div class="child">
+
+    </div>
+</div>
+<video src="video/egVideo.mp4" autoplay="autoplay" loop="loop" poster="../images/1.jpg" controls="controls" id="v1">
+    <object data="" type=""></object>
+</video>
+
+</body>
+</html>

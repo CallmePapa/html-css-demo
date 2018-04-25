@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            let oBtn = document.getElementById('btn1');
+            oBtn.onclick = function () {
+                if (window.navigator.geolocation) {
+                    let watchID = navigator.geolocation.watchPosition(
+                        res => {
+                            alert("success");
+                        },
+                        err => {
+                            alert("error");
+                        },
+                        {
+                            /*//三个参数
+                            enableHighAccuracy,//高精度模式
+                            timeout,//超时
+                            maximumAge//缓存时间
+                            */
+                            frequency: 1000//频率，位置改变，返回的watchID不同；
+                        });
+                } else {
+                    alert('不支持');
+                }
+                return watchID;
+            }
+        }
+
+    </script>
+</head>
+<body>
+<input type="button" name="" value="定位" id="btn1">
+
+</body>
+</html>
