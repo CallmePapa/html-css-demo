@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webWorker</title>
+    <script>
+
+        window.onload=function () {
+            let oBtn=document.getElementById('btn');
+            let oText1=document.getElementById('text1');
+            let oText2=document.getElementById('text2');
+
+            oBtn.onclick=function () {
+                let n1=parseInt(oText1.value);
+                let n2=parseInt(oText2.value);
+
+                //创建子进程
+                let w=new Worker("w1.js");
+
+                //发送
+                w.postMessage({n1,n2});
+
+                //接收请求到的数据
+                w.onmessage=function (ev) {
+                    alert(ev.data);
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="text1">
+<input type="text" id="text2">
+<input type="button" id="btn" value="计算">
+</body>
+</html>

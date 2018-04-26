@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webWorker</title>
+    <style>
+        .div1{
+            background: #0a628f;
+            border: 1px solid chartreuse;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            let oBtn = document.getElementById('btn');
+            let oDiv=document.getElementById('div1')
+
+            oBtn.onclick = function () {
+
+                //创建子进程
+                let w = new Worker("w2.js");
+
+                //发送
+                w.postMessage(oDiv);
+
+                //接收请求到的数据
+                w.onmessage = function (ev) {
+                    alert(ev.data);
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" id="btn" value="计算">
+<div class="div1">
+
+</div>
+</body>
+</html>

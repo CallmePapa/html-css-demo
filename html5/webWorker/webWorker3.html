@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webWorker</title>
+
+    <script>
+
+        window.onload = function () {
+            let oBtn = document.getElementById('btn');
+
+            oBtn.onclick = function () {
+
+                let w=new Worker('w3.js');
+
+            }
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" id="btn" value="请求">
+
+</body>
+</html>
