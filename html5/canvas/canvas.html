@@ -16,20 +16,25 @@
     <script>
       window.onload=function(){
             let od=document.getElementById('c1');
-            let gd=od.getContext('2d');
-            let l=50;
-            //让其向右移动
-            setInterval(function () {
+            let gd=od.getContext('2d');//Context帮助获取所谓的图片上下文，上下文接口
+           //路径操作-ps选区操作
+            gd.moveTo(100,100);
+            gd.lineTo(300,200);
+            gd.lineTo(130,500);
+            gd.closePath();
 
-                gd.clearRect(0,0,od.width,od.height);//清除画布
-                l+=5;
-                gd.strokeRect(l,50,100,70);
-            },16);
+            gd.strokeStyle='red';
+            gd.stroke();
+            gd.fillStyle='yellow';
+            gd.fill();
       };
 
     </script>
 </head>
 <body>
-   <canvas id='c1' width="400" height="300"></canvas>
+   //只能用宽高属性改变画布的大小
+   <canvas id='c1' width="800" height="600">
+       您的浏览器暂时不支持，请更换浏览器访问。
+   </canvas>
 </body>
 </html>

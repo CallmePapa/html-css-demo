@@ -20,28 +20,47 @@
     <script type="text/javascript">
         window.onload = function () {
             let oDiv = document.getElementById('div1');
-            //ondragenter进入   ondragenleave离开  ondragover悬停(只要没离开就一直发生)
-            //ondrop松开鼠标(如果dragover不阻止默认事件，ondrap不会发生)
 
-            oDiv.ondragenter = function () {
+            oDiv.addEventListener('dragenter' ,function () {
                 oDiv.innerText = "释放鼠标";
-            };
-            oDiv.ondragleave = function () {
-                oDiv.innerText = '将文件拖拽至此处'
-            };
+            },false);
+
+            oDiv.addEventListener('dragleave', function () {
+                oDiv.innerText = '将文件拖拽至此处';
+            },false);
+
             oDiv.addEventListener('dragover', function (ev) {
-                console.log(ev.dataTransfer.files);
                 console.log('悬停');
                 ev.preventDefault();
             },false);
+
             oDiv.addEventListener('drop', function (ev) {
                 console.log('鼠标离开');
                 ev.preventDefault();
+
+                let oFile=ev.dataTransfer.files[0];//数据的传输---是一个数组。
+                console.log(oFile);
+
+                //读取文件
+                let reader=new FileReader();//创建读取文件
+
+                reader.onload=function () {
+                    console.log(this.result);
+                    alert(this.result);
+                };
+
+                reader.onerror=function () {
+                    alert('读取失败!')
+
+                };
+                //显示字节 数
+                reader.readAsArrayBuffer(oFile);
             },false)
         }
     </script>
 </head>
 <body>
 <div id="div1">将文件拖拽至此处</div>
+
 </body>
 </html>
