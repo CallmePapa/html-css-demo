@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bfLink</title>
+    <style type="text/css">
+        a{
+            font-size: 16px;
+            text-decoration: none;
+            padding-right: 20px;
+            display: inline-block;
+            margin-bottom:5px ;
+            background: url("../images/imgOne.jpg") no-repeat 100% -327px;
+        }
+        /*差不多就长这样吧，就不一一列举了*/
+        a[href^="https://"]{
+            background-position: 100% -409px;
+        }
+        a[href^="home"]{
+            background-position: 100% -382px;
+        }
+        a[href$='doc']{
+            background-position: 100% 0;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="https://blog.csdn.net/qq_35765126/article/details/79475930">json下拉框</a></li>
+    <li><a href="home">home</a></li>
+    <li><a href="a.doc">world</a></li>
+    <li><a href="b.ppt">ppt</a></li>
+    <li><a href="c.xsl">Excel</a></li>
+    <li><a href="d.html">Html</a></li>
+</ul>
+</body>
+</html>

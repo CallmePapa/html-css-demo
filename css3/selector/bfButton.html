@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bfButton</title>
+    <style type="text/css">
+        .download-info {
+            text-align: center;
+        }
+
+        /*默认状态下的按钮效果*/
+        .btn {
+            /*background-color: #0074cc;*/
+            background-image: -ms-linear-gradient(top, #0088cc, #0055cc);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0055cc));
+            background-image: -webkit-linear-gradient(top, #0088cc, #0055cc);
+            background-image: -o-linear-gradient(top, #0088cc, #0055cc);
+            background-image: -moz-linear-gradient(top, #0088cc, #0055cc);
+            background-image: linear-gradient(top, #0088cc, #0055cc);
+            background-repeat: repeat-x;
+            display: inline-block;
+            /*border: 1px solid #cccccc;*/
+            /*css3色彩模块*/
+            border-color: rgba(0, 0, 0.0 .1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+            border-radius: 6px;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-size: 20px;
+            line-height: normal;
+            padding: 14px 24px;
+            text-align: center;
+            /*css3文字阴影*/
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+            text-decoration: none;
+            vertical-align: middle;
+            zoom: 1;
+        }
+
+        .btn:hover {
+            background-position: 0 -15px;
+            background-color: #0055cc;
+            color: #FFFFFF;
+            text-decoration: none;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+            /*css3动画效果*/
+            transition: background-position 0.1s linear;
+            -moz-transition: background-position 0.1s linear;
+            -o-transition: background-position 0.1s linear;
+            -webkit-transition: background-position 0.1s linear;
+        }
+
+        .btn:active {
+            background-color: #0055cc;
+            /*background-image: none;*/
+            outline: 0;
+            /*css3盒子阴影属性*/
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .btn:focus {
+            outline: thin dotted #333333;
+            /*outline: 5px auto -webkit-focus-ring-color;*/
+            outline-offset: -2px;
+        }
+    </style>
+</head>
+<body>
+<div class="download-info">
+    <a href="#" class="btn">View project on github!</a>
+</div>
+</body>
+</html>
