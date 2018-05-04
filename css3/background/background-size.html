@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-size</title>
+    <style type="text/css">
+        div{
+            width: 320px;
+            height: 270px;
+            border: 1px solid red;
+            background: url("../images/imgOne.jpg") no-repeat;
+            margin: 10px;
+            float: left;
+        }
+        .auto{
+            background-size: auto;/*280px 200px  图片不会失真*/
+        }
+        .percentage{
+            background-size:50% 80% ;/*相对元素的大小进行缩放的*/
+        }
+        .cover{
+            background-size: cover;
+            background-position: center;/*通常用来制作满屏效果*/
+        }
+        .contain{
+            background-size: contain;/*整个图片根据背景区域对背景图片进行宽高比例的缩放*/
+        }
+    </style>
+</head>
+<body>
+<div class="auto"></div>
+<div class="percentage"></div>
+<div class="cover"></div>
+<div class="contain"> </div>
+</body>
+</html>

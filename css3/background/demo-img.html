@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style type="text/css">
+        .demo {
+            width: 320px;
+            border: 20px solid rgba(104, 104, 142, 0.5);
+            border-radius: 10px;
+            padding: 80px 60px;
+            color: #ff3366;
+            font-size: 25px;
+            line-height: 1.5;
+            text-align: center;
+            height: 200px;
+        }
+
+        .multipleBg {
+            background: url("../images/1.jpg") no-repeat left top,
+            url("../images/2.jpg") no-repeat right top,
+            url("../images/3.jpg") no-repeat left bottom,
+            url("../images/4.jpg") no-repeat left bottom,
+            url("../images/imgOne.jpg") repeat left top;
+
+            /*改变图片的position起始点，四张图都是border边缘处起，而平铺背景是paddin内边缘起*/
+            -webkit-background-origin: border-box, border-box, border-box, border-box, padding-box;
+            -moz-background-origin: border-box, border-box, border-box, border-box, padding-box;
+            -o-background-origin: border-box, border-box, border-box, border-box, padding-box;
+            background-origin: border-box, border-box, border-box, border-box, padding-box;:;
+
+            /*控制背景图片的显示区域，所有背景图片超出border外边缘都将被剪切掉*/
+
+            -o-background-clip: border-box;
+            background-clip: border-box;
+            -webkit-background-clip: border-box;
+            -moz-background-clip: border-box;
+        }
+
+    </style>
+</head>
+<body>
+<div class="demo multipleBg"></div>
+</body>
+</html>
