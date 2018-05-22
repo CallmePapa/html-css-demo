@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*设置body为伸缩容器*/
+    display: -webkit-box; /*旧版本ios*/
+    display: -moz-box; /*旧版本火狐19-*/
+    display: -ms-flexbox; /*混合版本IE10*/
+    display: -webkit-flex; /*chrome新版本*/
+    display: flex; /*标准版本*/
+
+    /*伸缩项目换行*/
+    -moz-flex-flow: column wrap; /*混合版本*/
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap; /*最新版本*/
+}
+
+header{
+    background-color: #82d8ff;
+    border:1px solid grey;
+}
+section {
+
+    background-color: #ff79b1;
+    border: 1px solid grey;
+    /*设置section为伸缩容器*/
+    display: -webkit-box; /*旧版本ios*/
+    display: -moz-box; /*旧版本火狐19-*/
+    display: -ms-flexbox; /*混合版本IE10*/
+    display: -webkit-flex; /*chrome新版本*/
+    display: flex; /*标准版本*/
+
+    /*设置三列布局*/
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    /*主体内容的伸缩性*/
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+
+    /*侧轴排列方式*/
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    -ms-box-align: stretch;
+    -o-box-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+
+}
+
+article {
+    background-color: #44ff51;
+    border: 1px solid grey;
+
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+
+    /*排布再中间，即所在行的第二列*/
+    -ms-flex-order: 2;
+    order: 2;
+}
+
+aside {
+    background-color: cadetblue;
+    border: 1px solid grey;
+    -moz-box-ordinal-group: 3;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+}
+
+nav{
+    background-color: #1856ff;
+    border: 1px solid grey;
+}
+footer{
+    background-color: #fdff8e;
+    border: 1px solid grey;
+}
+
