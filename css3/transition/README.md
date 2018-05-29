@@ -16,3 +16,4 @@
 让所有的导航项放置在一个面板上。
 </li>
 </ul>
+<img src="./images/demo.png" alt="demo.jpg">
